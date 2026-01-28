@@ -1,13 +1,9 @@
 version: "3.8"
 
 services:
-  stratum-proxy:
+  proxy:
     build: .
     container_name: stratum-proxy
-    restart: unless-stopped
     ports:
       - "3334:3334"
-    environment:
-      POOL_HOST: leywapool.com
-      POOL_PORT: 6322
-      PROXY_PORT: 3334
+    restart: unless-stopped
