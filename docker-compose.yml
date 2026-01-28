@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  stratum-proxy:
+    image: python:3.9-slim
+    container_name: stratum-proxy
+    restart: always
+    working_dir: /app
+    command: >
+      sh -c "
+      apt update &&
+      apt install -y git &&
+      git clone https://github.com/slush0/stratum-mining-proxy.git &&
+      cd stratum-mining-proxy &&
+      pip install -r requirements.txt &&
+      python mining_proxy.py -o pool.belcoin.com -p 3333 -sh 0.0.0.0 -sp 3334
+      "
+    ports:
+      - "3334:3334"
