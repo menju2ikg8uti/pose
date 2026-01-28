@@ -1,19 +1,13 @@
-version: "3"
+version: "3.8"
 
 services:
   stratum-proxy:
-    image: python:3.9-slim
+    build: .
     container_name: stratum-proxy
-    restart: always
-    working_dir: /app
-    command: >
-      sh -c "
-      apt update &&
-      apt install -y git &&
-      git clone https://github.com/slush0/stratum-mining-proxy.git &&
-      cd stratum-mining-proxy &&
-      pip install -r requirements.txt &&
-      python mining_proxy.py -o pool.belcoin.com -p 3333 -sh 0.0.0.0 -sp 3334
-      "
+    restart: unless-stopped
     ports:
       - "3334:3334"
+    environment:
+      POOL_HOST: leywapool.com
+      POOL_PORT: 6322
+      PROXY_PORT: 3334
