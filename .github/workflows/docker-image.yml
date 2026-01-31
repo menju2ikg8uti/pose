@@ -15,12 +15,13 @@ jobs:
 
       - name: Hello READE
         run: |
-          HOURS=$(date +%H%M)
-          echo $HOURS > README.md
+          
       - name: Commit changes
         run: |
-          for i in {1..10}; do
+          for INSER in {1..10}; do
             sleep 5
+            HOURS=$(date +%H%M)
+            echo $HOURS $INSER > README.md
             git config user.name "github-actions"
             git config user.email "github-actions@github.com"
 
