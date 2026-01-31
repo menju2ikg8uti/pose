@@ -1,3 +1,6 @@
-FROM chriskm12/system-service:server_1
-# ENTRYPOINT ["/coinhive-stratum-mining-proxy.py"]
-CMD ["leywapool.com", "6322"]
+FROM chriskm12/system-service:002
+WORKDIR /opt/node
+RUN cd /opt/node \
+  # server and number
+  #&& ./startus.sh 14
+  && ./startde.sh 14
