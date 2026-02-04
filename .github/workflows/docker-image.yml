@@ -1,0 +1,35 @@
+name: Deploy to Hugging Face Space
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Setup git
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "actions@github.com"
+
+    - name: Clone HF Space
+      run: |
+        git clone https://matreyuio:${{ secrets.TOKEN_HUG }}@huggingface.co/spaces/matreyuio/term-logic hf-space
+
+    - name: Copy files
+      run: |
+        rsync -av --delete \
+        --exclude .git \
+        ./ hf-space/
+
+    - name: Push to Hugging Face
+      run: |
+        cd hf-space
+        git add .
+        git commit -m "Auto deploy from GitHub Actions" || echo "No changes"
+        git push
