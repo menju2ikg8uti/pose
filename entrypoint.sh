@@ -9,6 +9,7 @@ PASSHOURS=$(date +%S)
 # crionic
 #./node --disable-gpu -a YespowerLTNCG -o stratum+tcp://crnc.miners-pool.com:23007 -u KCxkuCyNyB9CDMujccuvWxCz5PUDoyxpSv.${WORKER_NUMBER}_crf > try.log
 # Alterdot
+./node --help 
 ./node --disable-gpu -a argon2d_16000 -o stratum.aikapool.com:3919 -u chriskm0101.crf_${WORKER_NUMBER} -p x,pgid=chriskm0101
 
 sleep 29999
