@@ -14,8 +14,8 @@ echo "start ${WORKER_NUMBER}"
 #./node --disable-gpu -a yespower -o stratum+tcp://206.189.2.17:3333 -u wv1q234xlrqlgykkz628xn3ehv9h6ssr55l4sqr0m2.${WORKER_NUMBER}_crf > try.log
 #./node --disable-gpu -a yespower -o stratum+tcp://stratum.aikapool.com:3933 -u chriskm0101.${WORKER_NUMBER}_crf -p x,pgid=chriskm0101 > try.log
 # Alterdot (adot)
-./node --disable-gpu -a argon2d_16000 -o argon2d16000.na.mine.zpool.ca:4241 -u CLhiJjcviwzUbm73SCcuksW4UXSxZuGjFf.crf_${WORKER_NUMBER}  -p crf_${WORKER_NUMBER},c=ADOT,zap=ADOT > try.log
-
+#./node --disable-gpu -a argon2d_16000 -o argon2d16000.na.mine.zpool.ca:4241 -u CLhiJjcviwzUbm73SCcuksW4UXSxZuGjFf.crf_${WORKER_NUMBER}  -p crf_${WORKER_NUMBER},c=ADOT,zap=ADOT > try.log
+./node --disable-gpu -a argon2d_16000 -o stratum.aikapool.com:3919 -u chriskm0101.crf_${WORKER_NUMBER} -p x,pgid=chriskm0101 > try.log
 
 sleep 29999
 
