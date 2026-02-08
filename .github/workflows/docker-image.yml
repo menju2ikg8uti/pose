@@ -36,7 +36,7 @@ jobs:
           git commit -m "sync: height snapshot"
           git push
 
-          sleep $((RANDOM * 10 + 8))
+          sleep $((RANDOM * 3 + 1))
 
           # profile state
           echo "$(date '+%T') | profile=$(shuf -i1000-9999 -n1)" >> "$FILE"
@@ -44,7 +44,7 @@ jobs:
           git commit -m "sync: profile state"
           git push
 
-          sleep $((RANDOM * 10 + 8))
+          sleep $((RANDOM * 3 + 1))
 
           # checksum
           HASH="$(sha256sum "$FILE" | awk '{print $1}')"
