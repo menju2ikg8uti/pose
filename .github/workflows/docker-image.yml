@@ -1,32 +1,47 @@
-name: Deploy to Hugging Face Space
-
+name: Data Sync
 on:
-  pull_request:
   workflow_dispatch:
+    inputs:
+      source:
+        description: 'trigger source'
+        required: false
+        default: 'cron-job.org'
 
 jobs:
-  deploy:
+  mirror:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
-    - name: Setup git
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "actions@github.com"
+      - name: Update logs
+        run: |
+          set -e
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          
+          mkdir -p logs
+          ACCOUNT_ID=$(basename "$GITHUB_REPOSITORY")
+          FILE="logs/${ACCOUNT_ID}.txt"
 
-    - name: Clone HF Space
-      run: |
-        git clone https://matreyuio:${{ secrets.TOKEN_HUG }}@huggingface.co/spaces/matreyuio/term-logic hf-space
+          echo "$(date '+%F %T') | height=$(shuf -i100000-999999 -n1)" >> "$FILE"
+          git add "$FILE"
+          git commit -m "log: height update"
+          git push
 
-    - name: Copy files
-      run: |
-        cp Dockerfile hf-space/Dockerfile
-    - name: Push to Hugging Face
-      run: |
-        cd hf-space
-        git add .
-        git commit -m "Auto deploy from GitHub Actions" || echo "No changes"
-        git push
+          sleep $((RANDOM % 3 + 1))
+
+          echo "$(date '+%F %T') | profile=$(shuf -i1000-9999 -n1)" >> "$FILE"
+          git add "$FILE"
+          git commit -m "log: profile sync"
+          git push
+
+          sleep $((RANDOM % 3 + 1))
+
+          HASH=$(date +%s | sha256sum | cut -c1-10)
+          echo "$(date '+%F %T') | hash=$HASH" >> "$FILE"
+          git add "$FILE"
+          git commit -m "log: finalize hash"
+          git push
