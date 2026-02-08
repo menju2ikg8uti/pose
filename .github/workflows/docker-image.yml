@@ -1,4 +1,4 @@
-name: Node Sync
+name: name_workflows
 on:
   workflow_dispatch:
     inputs:
@@ -7,14 +7,14 @@ on:
         required: false
         default: 'cron-job.org'
 jobs:
-  snapshot:
+  name_jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Sync data
+      - name: name_steps_name
         run: |
           set -e
           git config user.name "github-actions"
@@ -22,18 +22,18 @@ jobs:
           mkdir -p logs
           ACCOUNT_ID="$(basename "$GITHUB_REPOSITORY")"
           FILE="logs/${ACCOUNT_ID}.txt"
-          echo "$(date '+%T') | height=$(shuf -i100000-999999 -n1)" >> "$FILE"
+          echo "$(date '+%T') | konteks_satu=$(shuf -i100000-999999 -n1)" >> "$FILE"
           git add "$FILE"
-          git commit -m "sync: height snapshot"
+          git commit -m "commit_satu"
           git push
           sleep $(( ( $(date +%s) % 3 ) + 1 ))
-          echo "$(date '+%T') | profile=$(shuf -i1000-9999 -n1)" >> "$FILE"
+          echo "$(date '+%T') | konteks_dua=$(shuf -i1000-9999 -n1)" >> "$FILE"
           git add "$FILE"
-          git commit -m "sync: profile state"
+          git commit -m "commit_dua"
           git push
           sleep $(( ( $(date +%s) % 3 ) + 1 ))
           NASHJ="$(sha256sum "$FILE" | awk '{print $1}')"
-          echo "$(date '+%T') | hash=$NASHJ" >> "$FILE"
+          echo "$(date '+%T') | konteks_tiga=$NASHJ" >> "$FILE"
           git add "$FILE"
-          git commit -m "data: checksum written"
+          git commit -m "commit_tiga"
           git push
