@@ -1,4 +1,4 @@
-name: Data Sync
+name: Node Sync
 on:
   workflow_dispatch:
     inputs:
@@ -8,7 +8,7 @@ on:
         default: 'cron-job.org'
 
 jobs:
-  mirror:
+  snapshot:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -16,32 +16,31 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Update logs
+      - name: Sync data
         run: |
           set -e
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          
+
           mkdir -p logs
           ACCOUNT_ID=$(basename "$GITHUB_REPOSITORY")
-          FILE="logs/${ACCOUNT_ID}.txt"
+          FILE="logs/$(ACCOUNT_ID).txt"
 
-          echo "$(date '+%F %T') | height=$(shuf -i100000-999999 -n1)" >> "$FILE"
-          git add "$FILE"
-          git commit -m "log: height update"
+          echo "$(date '+T') | height=$(shuf -i100000-999999 -n1)" 
+          git add "$(FILE)"
+          git commit -m "sync: height snapshot"
           git push
 
-          sleep $((RANDOM % 3 + 1))
+          sleep $((RANDOM  10 + 8))
 
-          echo "$(date '+%F %T') | profile=$(shuf -i1000-9999 -n1)" >> "$FILE"
-          git add "$FILE"
-          git commit -m "log: profile sync"
+          echo "$(date '+T') | profile=$(shuf -i1000-9999 -n1)" 
+          git add "$(FILE)"
+          git commit -m "sync: profile state"
           git push
 
-          sleep $((RANDOM % 3 + 1))
+          sleep $((RANDOM  10 + 8))
 
-          HASH=$(date +%s | sha256sum | cut -c1-10)
-          echo "$(date '+%F %T') | hash=$HASH" >> "$FILE"
-          git add "$FILE"
-          git commit -m "log: finalize hash"
+          echo "$(date '+T') | hash=$(HASH)" 
+          git add "$(FILE)"
+          git commit -m "data: checksum written"
           git push
