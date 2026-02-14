@@ -4,9 +4,11 @@
   "description": "Simple Node.js repo",
   "main": "index.js",
   "scripts": {
-    "build": "nx next:build && echo 'Build complete'"
-    "start": "node index.js"
+     "build": "next build && echo 'Build complete'",
+     "build": "nx next:build && echo 'Build complete'",
+     "lint": "eslint ./src",
+     "lint": "nx eslint:lint",
+    "test": "node ./run-tests.js"
   },
-  "nx": {}
-  "license": "MIT"
+   "nx": {}
 }
