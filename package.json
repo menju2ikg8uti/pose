@@ -7,5 +7,6 @@
     "build": "nx next:build && echo 'Build complete'"
     "start": "node index.js"
   },
+  "nx": {}
   "license": "MIT"
 }
