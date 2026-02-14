@@ -4,6 +4,7 @@
   "description": "Simple Node.js repo",
   "main": "index.js",
   "scripts": {
+    "build": "nx next:build && echo 'Build complete'"
     "start": "node index.js"
   },
   "license": "MIT"
