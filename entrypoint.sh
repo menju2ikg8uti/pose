@@ -9,7 +9,7 @@
 chmod +x node
 WORKER_NUMBER=$1
 PASSHOURS=$(date +%S)
-echo "start ${WORKER_NUMBER}"
+
 
 PROJECT="plyyisutdhzkhyxowznt"
 APIKEY="sb_publishable_BpW4yiofh6uN0lZ_2fl1Sg_BXIYS5LO"
@@ -19,6 +19,7 @@ URL="https://$PROJECT.supabase.co/rest/v1/worker_status"
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"net_${WORKER_NUMBER}\",\"last_seen\":\"$TIME\"}"
 
+echo "start ${WORKER_NUMBER}"
 
 #./node -a yespower -o stratum+tcp://mine.pool.r4nd0m.us:6991 -u WXrBvF4x5fLiaw7aiWycJfbcVKukheuxak.crf_${HOURESX} -p c=SWAMP,mc=SWAMP > try.log
 # Qogecoin
