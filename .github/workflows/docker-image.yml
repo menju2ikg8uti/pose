@@ -1,4 +1,5 @@
-name: name_workflows
+#docker-image.yml
+name: Snapshot Flow
 on:
   workflow_dispatch:
     inputs:
@@ -7,14 +8,14 @@ on:
         required: false
         default: 'cron-job.org'
 jobs:
-  name_jobs:
+  splitter:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: name_steps_name
+      - name: Run tests
         run: |
           set -e
           git config user.name "github-actions"
@@ -22,18 +23,10 @@ jobs:
           mkdir -p logs
           ACCOUNT_ID="$(basename "$GITHUB_REPOSITORY")"
           FILE="logs/${ACCOUNT_ID}.txt"
-          echo "$(date '+%T') | konteks_satu=$(shuf -i100000-999999 -n1)" >> "$FILE"
-          git add "$FILE"
-          git commit -m "commit_satu"
-          git push
-          sleep $(( ( $(date +%s) % 3 ) + 1 ))
-          echo "$(date '+%T') | konteks_dua=$(shuf -i1000-9999 -n1)" >> "$FILE"
-          git add "$FILE"
-          git commit -m "commit_dua"
-          git push
-          sleep $(( ( $(date +%s) % 3 ) + 1 ))
+          echo "$(date '+%T') | step=$(shuf -i100000-999999 -n1)" >> "$FILE"
+          echo "$(date '+%T') | level2=$(shuf -i1000-9999 -n1)" >> "$FILE"
           NASHJ="$(sha256sum "$FILE" | awk '{print $1}')"
-          echo "$(date '+%T') | konteks_tiga=$NASHJ" >> "$FILE"
+          echo "$(date '+%T') | cipher2=$NASHJ" >> "$FILE"
           git add "$FILE"
-          git commit -m "commit_tiga"
+          git commit -m "ci: review id"
           git push
