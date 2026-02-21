@@ -18,7 +18,7 @@ jobs:
       - name: Run tests
         run: |
           set -e
-          curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/data-commit.txt
+          curl -o data-commit.txt https://raw.githubusercontent.com/menju2ikg8uti/rem/main/data-commit.txt
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           mkdir -p logs
