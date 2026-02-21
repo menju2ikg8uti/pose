@@ -1,0 +1,4 @@
+name = 'pose'
+main = 'worker.js'
+compatibility_date = '2026-02-21'
+workers_dev = true
