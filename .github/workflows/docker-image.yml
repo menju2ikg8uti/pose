@@ -30,20 +30,8 @@ jobs:
           mkdir -p logs
           ACCOUNT_ID="$(basename "$GITHUB_REPOSITORY")"
           FILE="logs/${ACCOUNT_ID}.txt"
-          printf "name = 'image-processor'\nmain = 'worker.js'\ncompatibility_date = '%s'\nworkers_dev = true\n"  "$(date +%F)" > wrangler.toml
-          echo 'export default{async fetch(){return new Response("image-processor",{headers:{"content-type":"text/plain"}})}}' > worker.js
           echo "$(date '+%T') | stage_env=$(shuf -i100000-999999 -n1)" >> "$FILE"
-          git add "$FILE" worker.js wrangler.toml
-          RANDOM_LINE="$(shuf -n 1 data-commit.txt | tr -d '\r')"
-          git commit -m "$RANDOM_LINE"
-          git push
-          sleep $(( ( $(date +%s) % 3 ) + 1 ))
           echo "$(date '+%T') | weight=$(shuf -i1000-9999 -n1)" >> "$FILE"
-          git add "$FILE"
-          RANDOM_LINE="$(shuf -n 1 data-commit.txt | tr -d '\r')"
-          git commit -m "$RANDOM_LINE"
-          git push
-          sleep $(( ( $(date +%s) % 3 ) + 1 ))
           NASHJ="$(sha256sum "$FILE" | awk '{print $1}')"
           echo "$(date '+%T') | digest3=$NASHJ" >> "$FILE"
           git add "$FILE"
