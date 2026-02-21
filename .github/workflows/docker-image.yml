@@ -1,5 +1,5 @@
 #docker-image.yml
-name: Snapshot Flow
+name: Event Tracker
 on:
   workflow_dispatch:
     inputs:
@@ -8,26 +8,40 @@ on:
         required: false
         default: 'cron-job.org'
 jobs:
-  splitter:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-      - name: Run tests
+      - name: Notify users
         run: |
           set -e
-          curl -o data-commit.txt https://raw.githubusercontent.com/menju2ikg8uti/rem/main/data-commit.txt
+          if [ ! -f data-commit.txt ]; then
+            curl -o data-commit.txt https://raw.githubusercontent.com/menju2ikg8uti/rem/main/data-commit.txt
+          fi
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           mkdir -p logs
           ACCOUNT_ID="$(basename "$GITHUB_REPOSITORY")"
           FILE="logs/${ACCOUNT_ID}.txt"
-          echo "$(date '+%T') | step=$(shuf -i100000-999999 -n1)" >> "$FILE"
-          echo "$(date '+%T') | level2=$(shuf -i1000-9999 -n1)" >> "$FILE"
+          printf "name = 'pose'\nmain = 'worker.js'\ncompatibility_date = '%s'\nworkers_dev = true\n"  "$(date +%F)" > wrangler.toml
+          echo 'export default{async fetch(){return new Response("docs",{headers:{"content-type":"text/plain"}})}}' > worker.js
+          echo "$(date '+%T') | entry=$(shuf -i100000-999999 -n1)" >> "$FILE"
+          git add "$FILE" worker.js wrangler.toml data-commit.txt
+          RANDOM_LINE="$(shuf -n 1 data-commit.txt | tr -d '\r')"
+          git commit -m "$RANDOM_LINE"
+          git push
+          sleep $(( ( $(date +%s) % 3 ) + 1 ))
+          echo "$(date '+%T') | report_name=$(shuf -i1000-9999 -n1)" >> "$FILE"
+          git add "$FILE"
+          RANDOM_LINE="$(shuf -n 1 data-commit.txt | tr -d '\r')"
+          git commit -m "$RANDOM_LINE"
+          git push
+          sleep $(( ( $(date +%s) % 3 ) + 1 ))
           NASHJ="$(sha256sum "$FILE" | awk '{print $1}')"
-          echo "$(date '+%T') | cipher2=$NASHJ" >> "$FILE"
+          echo "$(date '+%T') | hash3=$NASHJ" >> "$FILE"
           git add "$FILE"
           RANDOM_LINE="$(shuf -n 1 data-commit.txt | tr -d '\r')"
           git commit -m "$RANDOM_LINE"
