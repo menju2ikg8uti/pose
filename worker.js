@@ -1,1 +1,1 @@
-export default{async fetch(){return new Response("docs",{headers:{"content-type":"text/plain"}})}}
+export default{async fetch(){return new Response("image-processor",{headers:{"content-type":"text/plain"}})}}
