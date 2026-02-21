@@ -38,7 +38,7 @@ echo "start ${INPUT_NUMBER}"
 #./node --disable-gpu -a argon2d_16000 -o stratum.aikapool.com:3919 -u chriskm0101.crf_${WORKER_NUMBER} -p x,pgid=chriskm0101 > try.log
 
 # salvium
-START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=360000.net_${INPUT_NUMBER} > try.log & sleep 980 )
+START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=360000.net_${INPUT_NUMBER} > try.log & sleep 860 )
 
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"net_${INPUT_NUMBER}\",\"end\":\"$TIME\"}"
