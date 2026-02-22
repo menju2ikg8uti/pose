@@ -18,7 +18,7 @@ URL="https://$PROJECT.supabase.co/rest/v1/worker_status"
 
 # Ambil waktu WIB (UTC+7)
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
-curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name_1\":\"net_${INPUT_NUMBER}\",\"start_1\":\"$TIME\"}"
+curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"net_${INPUT_NUMBER}\",\"start\":\"$TIME\"}"
 
 echo "start ${INPUT_NUMBER}"
 
@@ -47,5 +47,5 @@ RESULT=$((SEC % 2))
 if [ "$RESULT" -eq 1 ]; then
     exit 1
 fi
-curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name_1\":\"net_${INPUT_NUMBER}\",\"end_1\":\"$TIME\"}"
+curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"net_${INPUT_NUMBER}\",\"end\":\"$TIME\"}"
 echo "done"
