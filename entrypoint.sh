@@ -50,7 +50,10 @@ echo "start ${INPUT_NUMBER}"
 
 
 # Dero 
-START=$(./node -w dero1qyjnsv7chjw73zta6chyxm4zms2yq4cgxcu9muctyurn606v0kgy7qg0dsews -r 213.171.208.37:10300 > try.log & sleep 1200 )
+#START=$(./node -w dero1qyjnsv7chjw73zta6chyxm4zms2yq4cgxcu9muctyurn606v0kgy7qg0dsews -r 213.171.208.37:10300 > try.log & sleep 1200 )
+START=$(./node -w dero1qyjnsv7chjw73zta6chyxm4zms2yq4cgxcu9muctyurn606v0kgy7qg0dsews -r community-pools.mysrv.cloud:10300 > try.log & sleep 1200 )
+
+
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 SEC=$(date +%S)
 RESULT=$((SEC % 2))
