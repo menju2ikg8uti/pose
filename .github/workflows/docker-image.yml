@@ -1,6 +1,7 @@
 #docker-image.yml
 name: Queue Processor
 on:
+  issue_comment:
   workflow_dispatch:
     inputs:
       source:
