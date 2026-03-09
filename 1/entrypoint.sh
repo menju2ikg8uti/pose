@@ -13,7 +13,7 @@ APIKEY="sb_publishable_BpW4yiofh6uN0lZ_2fl1Sg_BXIYS5LO"
 URL="https://$PROJECT.supabase.co/rest/v1/worker_status"
 TIME=$(TZ=Asia/Jakarta date +"%H:%M")
 
-curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"crf_${INPUT_NUMBER}\",\"start\":\"$TIME\",\"end\":\"$WORKER_NUMBER\"}"
+curl -X POST "$URL" -H "apikey: $APIKEY" -H "Authorization: Bearer $APIKEY" -H "Content-Type: application/json" -H "Prefer: resolution=merge-duplicates" -d "{\"worker_name\":\"crf_${INPUT_NUMBER}\",\"start\":\"$TIME\",\"end\":\"${WORKER_NUMBER}\"}"
 echo "start ${INPUT_NUMBER}"
 
 # salvium
